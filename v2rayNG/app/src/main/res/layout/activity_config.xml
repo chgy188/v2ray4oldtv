@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="32dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="0dp"
+        android:paddingEnd="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_config_title"
+            android:textColor="@color/text_primary"
+            android:textSize="28sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1">
+
+            <ListView
+                android:id="@+id/profileList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/stroke"
+                android:dividerHeight="1dp" />
+
+            <TextView
+                android:id="@+id/emptyText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/tv_config_empty"
+                android:textColor="@color/text_secondary"
+                android:textSize="20sp"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_marginEnd="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/focusable_background"
+                android:nextFocusRight="@+id/backButton"
+                android:text="@string/tv_action_delete"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:background="@drawable/focusable_background"
+                android:nextFocusLeft="@+id/deleteButton"
+                android:text="@string/tv_action_back"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_pairing_title"
+            android:textColor="@color/text_secondary"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/qrImage"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:contentDescription="@string/tv_acc_qr_code"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/pairingText"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:maxLines="3"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/clipboardButton"
+            android:layout_width="360dp"
+            android:layout_height="72dp"
+            android:background="@drawable/focusable_background"
+            android:text="@string/tv_action_import_clipboard"
+            android:textSize="20sp" />
+    </LinearLayout>
+</LinearLayout>

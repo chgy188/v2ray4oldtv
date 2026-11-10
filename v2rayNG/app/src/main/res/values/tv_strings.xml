@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_app_name">V2Ray TV</string>
+    <string name="tv_status_disconnected">Disconnected</string>
+    <string name="tv_status_connecting">Connecting…</string>
+    <string name="tv_status_connected">Connected · %1$s</string>
+    <string name="tv_status_error">Connection failed: %1$s</string>
+    <string name="tv_action_select_and_connect">Select a profile to connect</string>
+    <string name="tv_action_disconnect">Disconnect</string>
+    <string name="tv_action_config">Configurations</string>
+    <string name="tv_action_cancel">Cancel</string>
+    <string name="tv_dialog_select_profile">Select a profile (connects immediately)</string>
+    <string name="tv_no_profiles">No profiles yet. Use Configurations to import by QR code.</string>
+    <string name="tv_config_title">Configurations</string>
+    <string name="tv_config_empty">No saved profiles</string>
+    <string name="tv_action_import_clipboard">Import from clipboard</string>
+    <string name="tv_clipboard_empty">Clipboard is empty</string>
+    <string name="tv_action_delete">Delete selected</string>
+    <string name="tv_action_select_first">Select a profile first</string>
+    <string name="tv_action_back">Back</string>
+    <string name="tv_pairing_title">Scan to import</string>
+    <string name="tv_pairing_waiting">Waiting for the phone. Scan the QR code with its camera; valid for 5 minutes.</string>
+    <string name="tv_pairing_no_network">No LAN address found. Connect the TV to Wi-Fi first.</string>
+    <string name="tv_pairing_received">Imported %1$d profiles</string>
+    <string name="tv_pairing_failed">Import failed. Check the configuration text.</string>
+    <string name="tv_profile_unnamed">Unnamed profile</string>
+    <string name="tv_acc_qr_code">Pairing QR code</string>
+    <string name="tv_error_core_generic">Unable to start the VPN</string>
+    <string name="tv_error_vpn_permission">VPN permission was not granted</string>
+    <string name="tv_html_title">Send configurations to TV</string>
+    <string name="tv_html_note">Paste vmess / vless / trojan / ss / socks share links, base64 subscription content, or a subscription URL. Multiple lines are supported.</string>
+    <string name="tv_html_placeholder">Paste configurations here…</string>
+    <string name="tv_html_submit">Send to TV</string>
+    <string name="tv_html_empty">Paste something first</string>
+    <string name="tv_html_sending">Sending…</string>
+    <string name="tv_html_success">Imported {0} profiles</string>
+    <string name="tv_html_failure">Send failed. Retry or check that the phone and TV share the same Wi-Fi.</string>
+</resources>

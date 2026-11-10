@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tv_app_name">V2Ray TV</string>
+    <string name="tv_status_disconnected">未连接</string>
+    <string name="tv_status_connecting">正在连接…</string>
+    <string name="tv_status_connected">已连接 · %1$s</string>
+    <string name="tv_status_error">连接失败：%1$s</string>
+    <string name="tv_action_select_and_connect">选择配置并连接</string>
+    <string name="tv_action_disconnect">断开连接</string>
+    <string name="tv_action_config">配置</string>
+    <string name="tv_action_cancel">取消</string>
+    <string name="tv_dialog_select_profile">选择配置（选中后立即连接）</string>
+    <string name="tv_no_profiles">暂无配置，请到「配置」页面扫码导入</string>
+    <string name="tv_config_title">配置</string>
+    <string name="tv_config_empty">还没有保存的配置</string>
+    <string name="tv_action_import_clipboard">从剪贴板导入</string>
+    <string name="tv_clipboard_empty">剪贴板为空</string>
+    <string name="tv_action_delete">删除选中配置</string>
+    <string name="tv_action_select_first">请先选择一条配置</string>
+    <string name="tv_action_back">返回</string>
+    <string name="tv_pairing_title">扫码导入配置</string>
+    <string name="tv_pairing_waiting">等待手机发送。请用手机扫描二维码，5 分钟内有效。</string>
+    <string name="tv_pairing_no_network">未检测到局域网地址，请先让 TV 连接 Wi-Fi</string>
+    <string name="tv_pairing_received">已导入 %1$d 条配置</string>
+    <string name="tv_pairing_failed">导入失败，请检查配置内容</string>
+    <string name="tv_profile_unnamed">未命名配置</string>
+    <string name="tv_acc_qr_code">配对二维码</string>
+    <string name="tv_error_core_generic">无法启动 VPN</string>
+    <string name="tv_error_vpn_permission">未授予 VPN 权限</string>
+    <string name="tv_html_title">向 TV 发送配置</string>
+    <string name="tv_html_note">粘贴 vmess / vless / trojan / ss / socks 分享链接、base64 订阅内容或订阅地址，可一次粘贴多行。</string>
+    <string name="tv_html_placeholder">在此粘贴配置…</string>
+    <string name="tv_html_submit">发送到 TV</string>
+    <string name="tv_html_empty">请先粘贴配置内容</string>
+    <string name="tv_html_sending">正在发送…</string>
+    <string name="tv_html_success">成功导入 {0} 条配置</string>
+    <string name="tv_html_failure">发送失败，请重试或确认手机与 TV 在同一 Wi-Fi</string>
+</resources>

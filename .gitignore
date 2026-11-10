@@ -1,5 +1,8 @@
 *.dat
 *.jks
-V2rayNG/app/release/output.json
+v2rayNG/app/release/output.json
 .idea/
 .gradle/
+local.properties
+v2rayNG/app/libs/*.aar
+build_now.log

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingStart="64dp"
+    android:paddingTop="32dp"
+    android:paddingEnd="64dp"
+    android:paddingBottom="32dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_app_name"
+        android:textColor="@color/text_secondary"
+        android:textSize="20sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="@string/tv_status_disconnected"
+        android:textColor="@color/text_primary"
+        android:textSize="34sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+    <Button
+        android:id="@+id/primaryButton"
+        android:layout_width="480dp"
+        android:layout_height="88dp"
+        android:background="@drawable/focusable_background"
+        android:nextFocusDown="@+id/configButton"
+        android:nextFocusUp="@+id/configButton"
+        android:text="@string/tv_action_select_and_connect"
+        android:textSize="24sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="24dp" />
+
+    <Button
+        android:id="@+id/configButton"
+        android:layout_width="480dp"
+        android:layout_height="72dp"
+        android:background="@drawable/focusable_background"
+        android:nextFocusDown="@+id/primaryButton"
+        android:nextFocusUp="@+id/primaryButton"
+        android:text="@string/tv_action_config"
+        android:textSize="20sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>
