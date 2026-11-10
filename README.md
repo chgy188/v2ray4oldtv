@@ -1,36 +1,62 @@
-# v2rayNG
+# V2Ray TV · v2ray4oldtv
 
-A V2Ray client for Android, support [Xray core](https://github.com/XTLS/Xray-core) and [v2fly core](https://github.com/v2fly/v2ray-core)
+> **支持 Android 5.0（API 21）及以上版本** —— 面向老旧手机、Android 电视盒子与 Android TV 的 V2Ray 客户端。
 
-[![API](https://img.shields.io/badge/API-21%2B-yellow.svg?style=flat)](https://developer.android.com/about/versions/lollipop)
-[![Kotlin Version](https://img.shields.io/badge/Kotlin-1.6.21-blue.svg)](https://kotlinlang.org)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/2dust/v2rayNG)](https://github.com/2dust/v2rayNG/commits/master)
-[![CodeFactor](https://www.codefactor.io/repository/github/2dust/v2rayng/badge)](https://www.codefactor.io/repository/github/2dust/v2rayng)
-[![GitHub Releases](https://img.shields.io/github/downloads/2dust/v2rayNG/latest/total?logo=github)](https://github.com/2dust/v2rayNG/releases)
-[![Chat on Telegram](https://img.shields.io/badge/Chat%20on-Telegram-brightgreen.svg)](https://t.me/v2rayn)
+项目 `minSdkVersion 21`，可在 Android 5.x / 6.x / 7.x 等老设备上直接安装；同时提供 Leanback 电视启动入口，支持遥控器操作。基于 [2dust/v2rayNG](https://github.com/2dust/v2rayNG) 1.7.x 定制，V2Ray 核心（`libv2ray.aar`）已随仓库提供，克隆后无需额外下载即可编译。
 
-<a href="https://play.google.com/store/apps/details?id=com.v2ray.ang">
-<img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width="165" height="64" />
-</a>
+## 主要特性
 
-### Telegram Channel
-[github_2dust](https://t.me/github_2dust)
+- **老设备友好**：最低支持 **Android 5.0（API 21）**，提供 `armeabi-v7a` / `arm64-v8a` / `x86` / `x86_64` 分包及 universal 全架构 APK
+- **TV 入口**：`LEANBACK_LAUNCHER` 启动项、遥控器可操作的电视主界面与配置界面
+- **配对下发**：可通过局域网配对页面把配置发送到电视端
+- **完整代理能力**：VPN 模式、分应用代理、按域名/IP 分流、订阅与二维码导入等 v2rayNG 原有功能
+- **内置核心**：`v2rayNG/app/libs/libv2ray.aar` 随仓库提交，开箱即用
 
-### Usage
+## 版本与构建环境
 
-#### Geoip and Geosite
-- geoip.dat and geosite.dat files are in `Android/data/com.v2ray.ang/files/assets` (path may differ on some Android device)
-- download feature will get enhanced version in this [repo](https://github.com/Loyalsoldier/v2ray-rules-dat) (Note it need a working proxy)
-- latest official [domain list](https://github.com/v2fly/domain-list-community) and [ip list](https://github.com/v2fly/geoip) can be imported manually
-- possible to use third party dat file in the same folder, like [h2y](https://guide.v2fly.org/routing/sitedata.html#%E5%A4%96%E7%BD%AE%E7%9A%84%E5%9F%9F%E5%90%8D%E6%96%87%E4%BB%B6)
+| 项目 | 值 |
+| --- | --- |
+| 最低系统 | **Android 5.0（API 21）** |
+| targetSdkVersion | 31 |
+| compileSdkVersion | 34 |
+| buildToolsVersion | 34.0.0 |
+| JDK | 17 |
+| Gradle Wrapper | 7.5.1 |
+| Kotlin / AGP | 1.6.21 / 7.2.1 |
 
-### More in our [wiki](https://github.com/2dust/v2rayNG/wiki)
+## 本地构建
 
-### Development guide
+1. 准备 JDK 17、Android SDK Platform 34 与 Build Tools 34.0.0。
+2. 在 `v2rayNG/` 目录下创建 `local.properties`（该文件被 `.gitignore` 忽略，CI 会自动生成）：
 
-Android project under V2rayNG folder can be compiled directly in Android Studio, or using Gradle wrapper. But the v2ray core inside the aar is (probably) outdated.  
-The aar can be compiled from the Golang project [AndroidLibV2rayLite](https://github.com/2dust/AndroidLibV2rayLite) or [AndroidLibXrayLite](https://github.com/2dust/AndroidLibXrayLite).
-For a quick start, read guide for [Go Mobile](https://github.com/golang/go/wiki/Mobile) and [Makefiles for Go Developers](https://tutorialedge.net/golang/makefiles-for-go-developers/)
+   ```
+   sdk.dir=/你的/Android/Sdk 路径
+   ```
 
-v2rayNG can run on Android Emulators. For WSA, VPN permission need to be granted via
-`appops set [package name] ACTIVATE_VPN allow`
+3. 执行构建：
+
+   ```bash
+   cd v2rayNG
+   ./gradlew :app:assembleDebug
+   ```
+
+产物位于 `v2rayNG/app/build/outputs/apk/debug/`，按 ABI 分包的 APK 与 universal APK 都会生成；debug 构建自带调试签名，可直接安装。不确定设备架构时请使用 universal 包。
+
+## GitHub Actions
+
+仓库提供 `.github/workflows/build.yml`：
+
+- 推送到 `main`、提交 PR 或手动触发（Actions → Build APK → Run workflow）：自动编译，并把全部 APK 上传为构建产物（Artifacts，保留 30 天）
+- 推送 `v*` 标签（如 `v1.0.0`）：构建完成后自动创建同名 GitHub Release，并把全部 APK 作为附件上传
+
+CI 会自动安装 JDK 17 与 Android SDK 组件、生成 `local.properties`、修正 `gradlew` 执行权限，无需配置任何密钥即可完成构建。首个发布版本为 `v1.0.0`。
+
+## 使用提示
+
+- 首次启动需授予 VPN 权限；WSA / 部分模拟器需先执行：
+  `adb shell appops set com.v2ray.ang ACTIVATE_VPN allow`
+- `geoip.dat` / `geosite.dat` 放在 `Android/data/com.v2ray.ang/files/assets`，可在应用内下载增强版规则（需已有可用代理）
+
+## 许可
+
+GPL-3.0，详见 [LICENSE](LICENSE)。上游项目：[2dust/v2rayNG](https://github.com/2dust/v2rayNG)。
